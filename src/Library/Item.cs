@@ -30,5 +30,4 @@ public class Item //creamos clase item con sus atributos
         this.ataque = ataque;
         this.defensa = defensa;
     }
-    
 }
