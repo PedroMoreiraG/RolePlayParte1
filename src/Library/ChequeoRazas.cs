@@ -9,5 +9,11 @@ public class ChequeoRazas
             pj1.Ataque = 300;
             pj1.Defensa = 150;
         }
+
+        else if (pj1.Raza == "Hada")
+        {
+            pj1.Ataque = 100;
+            pj1.Defensa = 250;
+        }
     }
 }   
