@@ -1,4 +1,4 @@
-﻿namespace Library.Personajes;
+﻿namespace Library;
 
 public class Personaje
 {
