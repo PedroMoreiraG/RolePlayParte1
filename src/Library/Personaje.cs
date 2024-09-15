@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace Library;
+﻿namespace Library;
 
 public class Personaje
 {

@@ -1,4 +1,5 @@
-﻿
+﻿namespace Library;
+
 public class Item //creamos clase item con sus atributos 
 {
     public string NombreItem { get; set; }
