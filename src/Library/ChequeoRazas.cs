@@ -3,8 +3,9 @@ namespace Library;
 public class ChequeoRazas
 {
     // Método que asigna estadísticas
-    public void Estadistica(Personaje pj) 
-    { 
+    public void Estadistica(Personaje pj)
+    {
+        int bandera = 1;
         if (pj.Raza == "Mago") 
         { 
             pj.Ataque = 70; 
@@ -32,7 +33,14 @@ public class ChequeoRazas
         }
         else
         {
-            Console.WriteLine("La raza que usted eligio no se existe");
+            Console.WriteLine($"La raza del personaje llamado {pj.Nombre} no existe");
+            bandera -= 1;
+        }
+
+        if (bandera == 1)
+        {
+            
+            Console.WriteLine($"Personaje creado correctamente, Nombre: {pj.Nombre}, Raza: {pj.Raza}");
         }
     }
 }
