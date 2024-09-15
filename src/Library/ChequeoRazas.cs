@@ -34,12 +34,6 @@ public class ChequeoRazas
         {
             Console.WriteLine("La raza que usted eligio no se existe");
         }
-
-        else if (pj1.Raza == "Hada")
-        {
-            pj1.Ataque = 100;
-            pj1.Defensa = 250;
-        }
     }
 }
    
