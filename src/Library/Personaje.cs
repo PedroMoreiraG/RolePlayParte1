@@ -6,7 +6,7 @@ public class Personaje
 {
     private string nombre;
     private string raza;
-    private int vida;
+    private int vida = 100;
     private int ataque;
     private int defensa;
     private ArrayList lista_items = new ArrayList();
@@ -42,12 +42,12 @@ public class Personaje
     }
     
     
-    public Personaje(string nombre, int vida, int vida_inicial, ChequeoRaza chequeo_raza)
+    public Personaje(string nombre, string raza)
     {
         this.nombre = nombre;
-        this.vida = 100;
-        this.ataque = chequeo_raza.ataque;
-        this.defensa = chequeo_raza.defensa;
+        this.raza = raza;
+        ChequeoRazas chequeoRazas = new ChequeoRazas();
+        chequeoRazas.Estadistica(this); 
     }
     
     
