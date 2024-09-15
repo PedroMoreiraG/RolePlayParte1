@@ -2,37 +2,33 @@
 
 public class Item //creamos clase item con sus atributos 
 {
-    public string NombreItem { get; set; }
-    public int Ataque { get; set; }
-    public int Defensa { get; set; }
+    private string nombre;
+    private int ataque;
+    private int defensa;
 
-    public Item(string nombre, int ataque, int defensa) //constructor para inicializae el item
+    public string Nombre
     {
-        NombreItem = nombre;
-        Ataque = ataque;
-        Defensa = defensa;
+        get { return this.nombre; }
+        set { this.nombre = value; }
+    }
+    
+    public int Ataque
+    {
+        get { return this.ataque; }
+        set { this.ataque = value; }
     }
 
-    // método para obtener el total de ataque sumando los valores de los items (la lista se creó en clase personajes)
-    public static int ObtenerValorAtaque(List<Item> items)
+    public int Defensa
     {
-        int ataqueTotal = 0; //inicializamos el contador de ataque total en 0
-        foreach (var item in items) //recorremos cada item en la lista
-        {
-            ataqueTotal += item.Ataque;
-        }
-        return ataqueTotal;
+        get { return this.defensa; }
+        set { this.defensa = value; }
     }
 
-    // Método para obtener el total de defensa sumando los valores de los items en la lista
-    public static int ObtenerValorDefensa(List<Item> items)
+    public Item(string nombre, int ataque, int defensa) //constructor para inicializar el item
     {
-        int defensaTotal = 0;
-        foreach (var item in items)
-        {
-            defensaTotal += item.Defensa;
-        }
-        return defensaTotal;
+        this.nombre = nombre;
+        this.ataque = ataque;
+        this.defensa = defensa;
     }
+    
 }
-

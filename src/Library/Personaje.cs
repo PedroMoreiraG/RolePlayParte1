@@ -10,7 +10,6 @@ public class Personaje
     private int ataque;
     private int defensa;
     private ArrayList lista_items = new ArrayList();
-    public List<Item> Items { get; set; }
 
     public string Nombre
     {
@@ -49,11 +48,9 @@ public class Personaje
         this.vida = 100;
         this.ataque = chequeo_raza.ataque;
         this.defensa = chequeo_raza.defensa;
-        this.Items = new List<Item>();
     }
     
     
-    // Método para agregar item tanto de ataque como de defensa
     // Método para agregar item tanto de ataque como de defensa
     public void agregar_item(Item item)
     {
