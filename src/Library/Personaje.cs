@@ -1,20 +1,59 @@
-﻿namespace Library;
+﻿using System.Collections;
+
+namespace Library;
 
 public class Personaje
 {
-    public string Nombre { get; set; }
-    public int Vida { get; set; }
-    public int VidaInicial { get; set; }
+    private string nombre;
+    private int vida;
+    private int vida_inicial;
+    private int ataque;
+    private int defensa;
     public List<Item> Items { get; set; }
 
-    public Personaje(string nombre, int vidaInicial)
+    public string Nombre
     {
-        this.Nombre = nombre;
-        this.Vida = vidaInicial;
-        this.VidaInicial = vidaInicial;
-        this.Items = new List<Item>()
-
+        get { return this.nombre; }
+        set { this.nombre = value; }
     }
+
+    public int Vida
+    {
+        get { return this.vida;}
+        set { this.vida = value; }
+    }
+
+    public int Vida_Inicial
+    {
+        get { return this.vida_inicial; }
+        set { this.vida_inicial = value; }
+    }
+
+    public int Ataque
+    {
+        get { return this.ataque; }
+        set { this.ataque = value; }
+    }
+
+    public int Defensa
+    {
+        get { return this.defensa; }
+        set { this.defensa = value; }
+    }
+    
+    
+    public Personaje(string nombre, int vida, int vida_inicial, ChequeoRaza chequeo_raza)
+    {
+        this.nombre = nombre;
+        this.vida = vida;
+        this.vida_inicial = vida_inicial;
+        this.ataque = chequeo_raza.ataque;
+        this.defensa = chequeo_raza.defensa;
+        this.Items = new List<Item>();
+    }
+    
+    
+    // Método para agregar item tanto de ataque como de defensa
     // Método para agregar item tanto de ataque como de defensa
     public void AddItem(Item item)
     {
@@ -38,38 +77,4 @@ public class Personaje
     {
         return Item.ObtenerValorDefensa(Items); // Implementado en Clase Items
     }
-    
-    // Metodo de ataque a otro personaje
-
-    public void Atacar(Personaje objetivo)
-    {
-        int daño = this.ObtenerValorAtaque(); // El daño de ataque es el valor de ataque del personaje que ataca
-        objetivo.Defensa(daño); // Le pasa el valor de dano a la defensa del objetivo para ver cuanto le saca de vida
-    }
-    public void Defensa(int daño)
-    {
-        int defensa = this.ObtenerValorDefensa(); // El daño de ataque es el valor de ataque del personaje que ataca
-        int dañoFinal = daño - defensa; // Resta el daño a la defensa del atacado y asigna el nuevo dano
-        
-        //Evaluamos si la defensa fue mayor a da;o de ser asi, no resta nada a la vida
-        
-        if (dañoFinal < 0)
-        {
-            dañoFinal = 0;
-        }
-
-        objetivo.Vida -= dañoFinal; // Asignar nueva vida restandole el da;o final
-        
-        if (objetivo.Vida <= 0)
-        {
-            objetivo.Vida = 0;
-        }
-    }
-//Metodo para reiniciar la vida a su vida inicial
-    public void Curar()
-    {
-        this.Vida = this.VidaInicial;
-    }
-    
-    
 }
