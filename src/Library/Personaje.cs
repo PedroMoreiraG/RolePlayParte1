@@ -9,7 +9,6 @@ public class Personaje
     private int vida = 100;
     private int ataque;
     private int defensa;
-    private ArrayList lista_items = new ArrayList();
 
     public string Nombre
     {
@@ -47,49 +46,20 @@ public class Personaje
         this.nombre = nombre;
         this.raza = raza;
         ChequeoRazas chequeoRazas = new ChequeoRazas();
-        chequeoRazas.Estadistica(this); 
+        chequeoRazas.Estadistica(this);
+
     }
     
-    
-    // Método para agregar item tanto de ataque como de defensa
-    public void agregar_item(Item item)
-    {
-        if (lista_items.Contains(item.Nombre))
-        {
-            Console.WriteLine("Este objeto ya se encuentra equipado");
-        }
-        else
-        {
-            lista_items.Add(item.Nombre);
-            ataque += item.Ataque;
-            defensa += item.Defensa;
-        }
-    }
-    
-    // Método para eliminar item tanto de ataque como de defensa
-    public void quitar_item(Item item)
-    {
-        if (lista_items.Contains(item.Nombre))
-        {
-            lista_items.Remove(item.Nombre);
-            ataque -= item.Ataque;
-            defensa -= item.Defensa;
-        }
-        else
-        {
-            Console.WriteLine("Este objeto no se encuentra equipado");
-        }
-    }
     
     // Método para saber el valor de ataque que tiene el personaje
     public void ValorAtaque()
     {
-        Console.WriteLine("El valor de ataque total es: " + ataque);
+        Console.WriteLine($"El valor de ataque total es: {ataque}");
     }
     
     // Método para saber el valor de defensa que tiene el personaje
     public void ValorDefensa()
     {
-        Console.WriteLine("El valor de defensa total es: " + defensa);
+        Console.WriteLine($"El valor de defensa total es: {defensa}");
     }
 }

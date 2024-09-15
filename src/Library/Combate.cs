@@ -16,7 +16,7 @@ public class Combate
                 pj2.Vida = 0;
             }
 
-            Console.WriteLine($"{pj1.Nombre} atacó a {pj2.Nombre} causando {dano} de daño. Vida restante de {pj2.Nombre}: {pj2.Vida}");
+            Console.WriteLine($"{pj1.Nombre} ataco a {pj2.Nombre} causando {dano} de daño. Vida restante de {pj2.Nombre}: {pj2.Vida}");
         }
         else
         {
