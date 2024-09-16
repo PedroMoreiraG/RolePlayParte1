@@ -18,7 +18,7 @@ namespace LibraryTests
 
             // Crear algunos items para agregar al personaje
             Item alas = new Item("Alas", 0, 50); //con las alas el hada puede volar y esquivar el ataque 
-            Item barita = new Item("Barita", 60, 10);
+            Item barita = new Item("Varita", 60, 10);
 
             // Agregar las alas al personaje
             alas.agregar_item(pj);
@@ -27,8 +27,8 @@ namespace LibraryTests
 
             // Agregar la barita al personaje
             barita.agregar_item(pj);
-            Assert.AreEqual(210, pj.Defensa); // Defensa aumenta a 210 con la barita
-            Assert.AreEqual(360, pj.Ataque);  // Ataque aumenta a 360 con la barita
+            Assert.AreEqual(210, pj.Defensa); // Defensa aumenta a 210 con la varita
+            Assert.AreEqual(360, pj.Ataque);  // Ataque aumenta a 360 con la varita
 
             // Intentar agregar de nuevo las alas (debe mostrar un mensaje de que ya las tiene)
             alas.agregar_item(pj);
