@@ -46,7 +46,7 @@ public class Personaje
         this.nombre = nombre;
         this.raza = raza;
         ChequeoRazas chequeoRazas = new ChequeoRazas();
-        chequeoRazas.Estadistica(this);
+        chequeoRazas.Estadisticas(this);
 
     }
     

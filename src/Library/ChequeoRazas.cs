@@ -3,7 +3,7 @@ namespace Library;
 public class ChequeoRazas
 {
     // Método que asigna estadísticas
-    public void Estadistica(Personaje pj)
+    public void Estadisticas(Personaje pj)
     {
         int bandera = 1;
         if (pj.Raza == "Mago") 

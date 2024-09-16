@@ -49,6 +49,7 @@ public class Item //creamos clase item con sus atributos
         }
     }
     
+    // Método para agregar item tanto de ataque como de defensa
     public void quitar_item(Personaje pj)
     {
         if (lista_items.Contains(nombre))
